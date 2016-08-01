@@ -1,0 +1,31 @@
+.container {
+  max-width:1440px;
+  width:auto;
+  position:relative;
+}
+@media screen and (max-width:1450px){
+  .container {
+    padding-left:2em;
+    padding-right:2em;
+  }
+}
+@media screen and (max-width:550px){
+  .container {
+    padding-left:1em;
+    padding-right:1em;
+  }
+}
+
+/* helpers */
+@mixin blockCenter {
+  display:block;
+  margin-right:auto;
+  margin-left:auto;
+}
+@mixin absoluteFill {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}

@@ -1,0 +1,54 @@
+.callout-section {
+  .section-image {
+    text-align: center;
+    img {
+      max-height:350px;
+    }
+  }
+  .section-copy {
+    margin-bottom:1em;
+  }
+
+}
+.flexbox {
+  @media screen and (min-width:$screen-sm-min){
+    .section-content {
+      display:flex;
+      .section-image {
+        display: flex;
+        justify-content: center;
+        flex-direction:column;
+      }
+      .section-copy {
+        display: flex;
+        justify-content: center;
+        flex-direction:column;
+      }
+    }
+  }
+}
+.resource-listing {
+  .item-image {
+    max-width:80%;
+    height:0;
+    padding-top:40%;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    .gs-svg {
+      // max-width:6em;
+      // max-height:6em;
+      // margin-left:auto;
+      // margin-right:auto;
+      .outlineOne {
+        stroke:white;
+      }
+    }
+  }
+  .item-copy {
+    padding:0 1em;
+  }
+}
+.resource-blog-listing-item {
+  padding-right:3em;
+}

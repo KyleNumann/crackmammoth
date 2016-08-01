@@ -1,0 +1,214 @@
+/* ----------------Minimal Form Styles */
+.minimal-form label {
+  display:none;
+}
+.minimal-form  {
+  input[type="text"], input[type="email"], input[type="file"], textarea {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.4em;
+    box-sizing: border-box;
+    min-height: 2.6em;
+    padding: 0.8em;
+    border: 0;
+    background: #eaeaea;
+    border-radius:0;
+    font-size:1em;
+  }
+}
+.minimal-form .btn {
+  min-height: 2.6em;
+  padding: 0.8em;
+  font-size: 1em;
+  /* display: block; */
+  width: 100%;
+  border:none;
+}
+.minimal-form label.error {
+  top: 0.2em;
+  right: 1em;
+  font-size: 0.7em;
+  margin-bottom: 0;
+}
+.minimal-form input.error {
+  box-shadow: inset 0 0 0 1px red;
+}
+.minimal-form .fieldset {
+  position:relative;
+}
+
+/* ------------- Ajax Form Submission Styles */
+.ajax-form__processing {
+  display:none;
+}
+.ajax-form__complete {
+  display:none;
+}
+.ajax-form__complete .complete--error {
+  display:none;
+}
+.ajax-form__complete .complete--success {
+  display:none;
+}
+.ajax-form__wrap.submitted .hide-on-submit {
+  display:none;
+}
+.ajax-form__wrap.processing .ajax-form__processing {
+  display:block;
+}
+.ajax-form__wrap.submit-complete .ajax-form__complete {
+  display:block;
+}
+.ajax-form__wrap.submit-error .complete--error {
+  display:block;
+}
+.ajax-form__wrap.submit-success .complete--success {
+  display:block;
+}
+
+/* -------------- Circle Node Styles */
+.circle-node > div {
+  position:absolute;
+  top:50%;
+  left:50%;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+}
+.circle-node .circle-lg {
+  position:absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  top: 0%;
+  opacity: 0.2;
+}
+.circle-node .circle-md {
+  position:absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
+  top: 20%;
+  opacity: 0.5;
+}
+.circle-node .circle-sm {
+  position:absolute;
+  left:30%;
+  right:30%;
+  bottom:30%;
+  top:30%;
+  opacity:1
+}
+.circle-node--yellow > div {
+  background:#e6da48;
+}
+.shape-of-b2b-flag .circle-node--green {
+  width:60px;
+  height:60px;
+  left: 80%;
+  top: 75%;
+  margin-left:-30px;
+  margin-top:-30px;
+}
+.circle-node--green > div {
+  background:#62bb46;
+}
+.circle-node--blue > div {
+  background:#1988c7;
+}
+.circle-node--yellow {
+  animation: pulse 2.3s infinite;
+  -moz-animation: pulse 2.3s infinite;
+  -webkit-animation: pulse 2.3s infinite;
+}
+.circle-node--green {
+  animation: pulse 2.15s infinite;
+  -moz-animation: pulse 2.15s infinite;
+  -webkit-animation: pulse 2.15s infinite;
+}
+.circle-node--blue {
+  animation: pulse 1.7s infinite;
+  -moz-animation: pulse 1.7s infinite;
+  -webkit-animation: pulse 1.7s infinite;
+}
+.shape-of-b2b-flag-dismiss {
+  color:rgba(0,0,0,0.4);
+  margin-top:1em;
+  display:inline-block;
+  font-size:0.8em;
+}
+.shape-of-b2b-flag-dismiss:hover {
+  color:rgba(0,0,0,0.8);
+  text-decoration: none;
+}
+.processing-animation .circle-node {
+  position:relative;
+  width:50px;
+  height:50px;
+  display:inline-block;
+  margin:0 0.5em;
+}
+.processing-animation .circle-node--yellow {
+  animation: pulse 1.5s infinite;
+  -moz-animation: pulse 1.5s infinite;
+  -webkit-animation: pulse 1.5s infinite;
+}
+.processing-animation .circle-node--green {
+  animation: pulse 1.5s infinite 0.25s;
+  -moz-animation: pulse 1.5s infinite 0.25s;
+  -webkit-animation: pulse 1.5s infinite 0.25s;
+}
+.processing-animation .circle-node--blue {
+  animation: pulse 1.5s infinite .5s;
+  -moz-animation: pulse 1.5s infinite .5s;
+  -webkit-animation: pulse 1.5s infinite .5s;
+}
+@keyframes pulse {
+    0% { opacity:0; transform: scale(0.9); }
+    50% { opacity:1; }
+    100% { opacity:0; transform: scale(1.1); }
+}
+@-moz-keyframes pulse {
+  0% { opacity:0; transform: scale(0.9); }
+  50% { opacity:1; }
+  100% { opacity:0; transform: scale(1.1); }
+}
+@-webkit-keyframes pulse {
+  0% { opacity:0; transform: scale(0.9); }
+  50% { opacity:1; }
+  100% { opacity:0; transform: scale(1.1); }
+}
+
+.animated-form {
+  .fieldset {
+    margin-bottom:1.3em;
+    width:90%;
+    transition:all 0.3s ease;
+    .form-control {
+      font-size:1em;
+      padding:0.6em 0.4em;
+      min-height:2.2em;
+      transition:all 0.3s ease;
+    }
+    label {
+      margin-bottom:0.2em;
+      padding:0;
+      opacity:0.7;
+      transition:all 0.3s ease;
+      transform-origin:0% 100%;
+    }
+    &.focus {
+      width:100%;
+      .form-control {
+        box-shadow:0 0 0 3px $gs-green;
+      }
+      label {
+        opacity:1;
+        // transform:scale(1.2) translate(0.2em,-0.2em);
+        transform:scale(1.6);
+      }
+    }
+  }
+
+
+}

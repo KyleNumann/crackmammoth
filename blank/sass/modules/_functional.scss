@@ -1,0 +1,504 @@
+/* Functional CSS rules */
+
+.text-sm {
+  font-size:0.8em;
+}
+.text-lg {
+  font-size:1.3rem;
+  margin-bottom:0.2em;
+  display:inline-block;
+}
+
+/* Text */
+.text-center {
+  text-align:center;
+}
+.text-right {
+  text-align:right;
+}
+.text-left {
+  text-align:left;
+}
+
+.hidden {
+  display:none;
+}
+.visible {
+  display:block;
+}
+
+.absolute-fill {
+  // fill entire parent
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+.absolute-above {
+  // postion absolutely at top of parent element
+  position:absolute;
+  bottom:100%;
+  left:0;
+  right:0;
+}
+
+.inline-block {
+  display:inline-block;
+  vertical-align: top;
+}
+.block {
+  display:block;
+}
+
+
+/* box model classes */
+.pos-rel {
+  position:relative;
+}
+.clr-floats {
+  clear:both;
+}
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+.notrans {
+  transition:none;
+}
+
+
+/* Bootstrap column ordering hack */
+@media (min-width:480px){
+  .force-right-xs {
+    float:right;
+  }
+}
+@media (min-width:768px){
+  .force-right-sm {
+    float:right;
+  }
+}
+@media (min-width:992px){
+  .force-right-md {
+    float:right;
+  }
+}
+@media (min-width:1200px){
+  .force-right-lg {
+    float:right;
+  }
+}
+
+
+/* Standard Spacers */
+.vpadding-xs {
+  padding-top:1rem;
+  padding-bottom:1rem;
+}
+.vpadding-sm {
+  padding-top:2rem;
+  padding-bottom:2rem;
+}
+.vpadding-md {
+  padding-top:3rem;
+  padding-bottom:3rem;
+}
+.vpadding-lg {
+  padding-top:4rem;
+  padding-bottom:4rem;
+}
+.vpadding-xl {
+  padding-top:6rem;
+  padding-bottom:6rem;
+}
+.vpadding-xxl {
+  padding-top:8em;
+  padding-bottom:8em;
+}
+@media (max-width:991px){
+  .vpadding-xxl {
+    padding-top:6em;
+    padding-bottom:6em;
+  }
+}
+@media (max-width:767px){
+  .vpadding-md {
+    padding-top:2rem;
+    padding-bottom:2rem;
+  }
+  .vpadding-lg {
+    padding-top:3rem;
+    padding-bottom:3rem;
+  }
+  .vpadding-xlg {
+    padding-top:4rem;
+    padding-bottom:4rem;
+  }
+  .vpadding-xxl {
+    padding-top:5em;
+    padding-bottom:5em;
+  }
+}
+@media (max-width:550px){
+  .vpadding-sm {
+    padding-top:1rem;
+    padding-bottom:1rem;
+  }
+  .vpadding-md {
+    padding-top:2rem;
+    padding-bottom:2rem;
+  }
+  .vpadding-lg {
+    padding-top:3rem;
+    padding-bottom:3rem;
+  }
+  .vpadding-xlg {
+    padding-top:3rem;
+    padding-bottom:3rem;
+  }
+  // .vpadding-xxl {
+  //   padding-top:3em;
+  //   padding-bottom:3em;
+  // }
+}
+
+@media (min-width: 767px) {
+  .vcenter-wrap {
+    display: table;
+    width: 100%;
+    .vcenter {
+      display: table-cell;
+      float: none;
+      vertical-align: middle;
+      .cta {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* No Gutters modification for Bootstrap grid action */
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/* Inline Grid modification for Bootstrap */
+.inline-grid {
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    display:inline-block;
+    vertical-align: top;
+    float:none;
+    // tuck margins slightly to account for
+    // margin-left: -0.25em;
+    // margin-right: -0.25em;
+  }
+}
+
+/* Margin and padding */
+
+.mh-auto {
+  margin-left:auto;
+  margin-right:auto;
+}
+.m0 {
+  margin:0;
+}
+.mt0 {
+  margin-top:0;
+}
+.mr0 {
+  margin-right:0;
+}
+.mb0 {
+  margin-bottom:0;
+}
+.ml0 {
+  margin-left:0;
+}
+
+.m1 {
+  margin:0.25em;
+}
+.mt1 {
+  margin-top:0.25em;
+}
+.mr1 {
+  margin-right:0.25em;
+}
+.mb1 {
+  margin-bottom:0.25em;
+}
+.ml1 {
+  margin-left:0.25em;
+}
+
+.m2 {
+  margin:0.5em;
+}
+.mt2 {
+  margin-top:0.5em;
+}
+.mr2 {
+  margin-right:0.5em;
+}
+.mb2 {
+  margin-bottom:0.5em;
+}
+.ml2 {
+  margin-left:0.5em;
+}
+
+.m3 {
+  margin:0.75em;
+}
+.mt3 {
+  margin-top:0.75em;
+}
+.mr3 {
+  margin-right:0.75em;
+}
+.mb3 {
+  margin-bottom:0.75em;
+}
+.ml3 {
+  margin-left:0.75em;
+}
+
+.m4 {
+  margin:1em;
+}
+.mt4 {
+  margin-top:1em;
+}
+.mr4 {
+  margin-right:1em;
+}
+.mb4 {
+  margin-bottom:1em;
+}
+.ml4 {
+  margin-left:1em;
+}
+
+.m5 {
+  margin:1.25em;
+}
+.mt5 {
+  margin-top:1.25em;
+}
+.mr5 {
+  margin-right:1.25em;
+}
+.mb5 {
+  margin-bottom:1.25em;
+}
+.ml5 {
+  margin-left:1.25em;
+}
+
+.m6 {
+  margin:1.5em;
+}
+.mt6 {
+  margin-top:1.5em;
+}
+.mr6 {
+  margin-right:1.5em;
+}
+.mb6 {
+  margin-bottom:1.5em;
+}
+.ml6 {
+  margin-left:1.5em;
+}
+
+.m7 {
+  margin:1.75em;
+}
+.mt7 {
+  margin-top:1.75em;
+}
+.mr7 {
+  margin-right:1.75em;
+}
+.mb7 {
+  margin-bottom:1.75em;
+}
+.ml7 {
+  margin-left:1.75em;
+}
+
+.m8 {
+  margin:2em;
+}
+.mt8 {
+  margin-top:2em;
+}
+.mr8 {
+  margin-right:2em;
+}
+.mb8 {
+  margin-bottom:2em;
+}
+.ml8 {
+  margin-left:2em;
+}
+
+.p0 {
+  padding:0;
+}
+.pt0 {
+  padding-top:0;
+}
+.pr0 {
+  padding-right:0;
+}
+.pb0 {
+  padding-bottom:0;
+}
+.pl0 {
+  padding-left:0;
+}
+
+.p1 {
+  padding:0.25em;
+}
+.pt1 {
+  padding-top:0.25em;
+}
+.pr1 {
+  padding-right:0.25em;
+}
+.pb1 {
+  padding-bottom:0.25em;
+}
+.pl1 {
+  padding-left:0.25em;
+}
+
+.p2 {
+  padding:0.5em;
+}
+.pt2 {
+  padding-top:0.5em;
+}
+.pr2 {
+  padding-right:0.5em;
+}
+.pb2 {
+  padding-bottom:0.5em;
+}
+.pl2 {
+  padding-left:0.5em;
+}
+
+.p3 {
+  padding:0.75em;
+}
+.pt3 {
+  padding-top:0.75em;
+}
+.pr3 {
+  padding-right:0.75em;
+}
+.pb3 {
+  padding-bottom:0.75em;
+}
+.pl3 {
+  padding-left:0.75em;
+}
+
+.p4 {
+  padding:1em;
+}
+.pt4 {
+  padding-top:1em;
+}
+.pr4 {
+  padding-right:1em;
+}
+.pb4 {
+  padding-bottom:1em;
+}
+.pl4 {
+  padding-left:1em;
+}
+
+.p5 {
+  padding:1.25em;
+}
+.pt5 {
+  padding-top:1.25em;
+}
+.pr5 {
+  padding-right:1.25em;
+}
+.pb5 {
+  padding-bottom:1.25em;
+}
+.pl5 {
+  padding-left:1.25em;
+}
+
+.p6 {
+  padding:1.5em;
+}
+.pt6 {
+  padding-top:1.5em;
+}
+.pr6 {
+  padding-right:1.5em;
+}
+.pb6 {
+  padding-bottom:1.5em;
+}
+.pl6 {
+  padding-left:1.5em;
+}
+
+.p7 {
+  padding:1.75em;
+}
+.pt7 {
+  padding-top:1.75em;
+}
+.pr7 {
+  padding-right:1.75em;
+}
+.pb7 {
+  padding-bottom:1.75em;
+}
+.pl7 {
+  padding-left:1.75em;
+}
+
+.p8 {
+  padding:2em;
+}
+.pt8 {
+  padding-top:2em;
+}
+.pr8 {
+  padding-right:2em;
+}
+.pb8 {
+  padding-bottom:2em;
+}
+.pl8 {
+  padding-left:2em;
+}

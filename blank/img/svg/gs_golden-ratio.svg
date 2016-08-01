@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 360 360" style="enable-background:new 0 0 360 360;" xml:space="preserve">
+<style type="text/css">
+	.colorOne{fill:#D7BE3C;}
+	.colorTwo{fill:#F4D857;}
+	.colorThree{fill:#FFF573;}
+	.colorFour{fill:#FFF4B0;}
+	.outlineOne{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st1{fill:#F9D500;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:none;stroke:#000000;stroke-width:5.625;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st10{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:19.8448,39.6897;}
+	.st11{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st12{fill:#BDF4AB;}
+	.st13{fill:#91ED77;}
+	.st14{fill:#75D05C;}
+	.st15{fill:#5AB441;}
+	.st16{fill:#B0DAFF;}
+	.st17{fill:#7BB6F7;}
+	.st18{fill:#5E9BDA;}
+	.st19{fill:#4182BE;}
+	.st20{fill:none;}
+	.st21{fill:#D7BE3C;}
+	.st22{fill:#F4D857;}
+	.st23{fill:#FFF4B0;}
+</style>
+<g id="outlines">
+	<rect x="31.3" y="94.9" class="outlineOne" width="178.2" height="178.2"/>
+	<rect x="209.5" y="94.9" class="outlineOne" width="110" height="110"/>
+	<rect x="251.4" y="205" class="outlineOne" width="68.2" height="68.2"/>
+	<rect x="209.5" y="231.7" class="outlineOne" width="41.8" height="41.5"/>
+	<rect x="31.3" y="94.9" class="outlineOne" width="288.3" height="178.2"/>
+</g>
+<g id="fills">
+	<rect x="209.5" y="205" class="colorFour" width="41.8" height="26.6"/>
+	<rect x="209.5" y="231.6" class="colorTwo" width="41.8" height="44.6"/>
+	<rect x="251.4" y="205" class="colorThree" width="71.2" height="71.2"/>
+	<rect x="209.5" y="91.9" class="colorOne" width="113" height="113"/>
+	<rect x="28.3" y="91.9" class="colorThree" width="181.2" height="184.2"/>
+</g>
+</svg>

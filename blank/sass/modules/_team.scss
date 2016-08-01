@@ -1,0 +1,36 @@
+.team-member {
+  margin-bottom:12px;
+  position:relative;
+  img {
+    display:block;
+
+  }
+  .item-copy {
+    position:absolute;
+    bottom:0.5em;
+    left:1em;
+    right:1em;
+    z-index:5;
+    text-shadow:0 0 0.4em rgba(0,0,0,0.3);
+  }
+  .connect-links {
+    position:absolute;
+    top:0.5em;
+    right:1em;
+
+    font-size:1.4em;
+    opacity:0;
+    transition: all 0.3s ease;
+    z-index:5;
+    a {
+      color:white;
+      &:hover {
+        color:$primaryColor;
+      }
+    }
+  }
+  &:hover .connect-links {
+    opacity:1;
+    top:1em;
+  }
+}

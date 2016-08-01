@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st1{fill:#F9D500;}
+	.st2{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:none;stroke:#000000;stroke-width:5.625;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st10{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:19.8448,39.6897;}
+	.st11{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st12{fill:#FFF4B0;}
+	.st13{fill:#D7BE3C;}
+	.st14{fill:#F4D857;}
+	.st15{fill:#FFF573;}
+	.st16{fill:#BDF4AB;}
+	.st17{fill:#91ED77;}
+	.st18{fill:#75D05C;}
+	.st19{fill:#5AB441;}
+	.st20{fill:#B0DAFF;}
+	.st21{fill:#7BB6F7;}
+	.st22{fill:#5E9BDA;}
+	.st23{fill:#4182BE;}
+	.st24{fill:none;}
+</style>
+<g id="outlines">
+	<circle class="st7" cx="512" cy="512" r="356.2"/>
+	<path class="st0" d="M155.8,512c0,196.7,159.5,356.2,356.2,356.2S868.2,708.7,868.2,512"/>
+	<g>
+		<g>
+			<rect x="281.6" y="112.4" class="st7" width="460.7" height="633.1"/>
+		</g>
+		<g>
+			<line class="st0" x1="349.8" y1="404.7" x2="674.2" y2="404.7"/>
+		</g>
+		<g>
+			<line class="st0" x1="349.8" y1="481.9" x2="674.2" y2="481.9"/>
+		</g>
+		<g>
+			<line class="st0" x1="349.8" y1="559.1" x2="674.2" y2="559.1"/>
+		</g>
+		<g>
+			<line class="st0" x1="349.8" y1="636.3" x2="674.2" y2="636.3"/>
+		</g>
+		<g>
+			<path d="M650.2,209.2v103.5H373.8V209.2H650.2 M674.2,185.2H349.8v151.5h324.5V185.2L674.2,185.2z"/>
+		</g>
+	</g>
+</g>
+<g id="fills">
+</g>
+</svg>

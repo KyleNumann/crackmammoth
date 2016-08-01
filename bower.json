@@ -1,0 +1,28 @@
+{
+  "name": "gs-wp-template",
+  "description": "",
+  "main": "index.php",
+  "authors": [
+    "Andy Wells <andy@goldenspiralmarketing.com>, Seth Whiting <seth@goldenspiralmarketing.com>, Kyle Numann <kyle@goldenspiralmarketing.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/goldenspiralmarketing/default-wordpress-template",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.5",
+    "slideout.js": "^0.1.12",
+    "slick-carousel": "^1.5.9",
+    "magnific-popup": "^1.1.0",
+    "imagesloaded": "images-loaded#^4.1.0",
+    "jquery-validation": "^1.15.0",
+    "gsap": "^1.18.2"
+  }
+}

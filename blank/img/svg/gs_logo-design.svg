@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 1024" style="enable-background:new 0 0 1024 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st1{fill:#F9D500;}
+	.st2{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:none;stroke:#000000;stroke-width:5.625;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st10{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:19.8448,39.6897;}
+	.st11{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st12{fill:#FFF4B0;}
+	.st13{fill:#D7BE3C;}
+	.st14{fill:#F4D857;}
+	.st15{fill:#FFF573;}
+	.st16{fill:#BDF4AB;}
+	.st17{fill:#91ED77;}
+	.st18{fill:#75D05C;}
+	.st19{fill:#5AB441;}
+	.st20{fill:#B0DAFF;}
+	.st21{fill:#7BB6F7;}
+	.st22{fill:#5E9BDA;}
+	.st23{fill:#4182BE;}
+	.st24{fill:none;}
+</style>
+<g id="outlines">
+	<path class="st0" d="M455.2,863.7c18.5,3,37.5,4.5,56.8,4.5c196.7,0,356.2-159.5,356.2-356.2S708.7,155.8,512,155.8
+		S155.8,315.3,155.8,512c0,97.1,38.9,185.2,101.9,249.4"/>
+	<g>
+		<g>
+			<path class="st7" d="M389.9,723.6l-129.5,34.7l34.7-129.5c5.5-20.5,31.1-27.3,46.1-12.3l61.1,61.1
+				C417.2,692.5,410.3,718.1,389.9,723.6z"/>
+			
+				<rect x="477.8" y="269.9" transform="matrix(0.7071 0.7071 -0.7071 0.7071 493.1003 -250.1613)" class="st7" width="141.5" height="400.5"/>
+			<path class="st7" d="M829,228.4l-38.7-38.7c-16.9-16.9-44.4-16.9-61.3,0l-49.6,49.6l100.1,100.1l49.6-49.6
+				C845.9,272.8,845.9,245.4,829,228.4z"/>
+		</g>
+	</g>
+	<line class="st0" x1="94.5" y1="512" x2="214.5" y2="512"/>
+	<line class="st0" x1="808.2" y1="512" x2="928.2" y2="512"/>
+	<line class="st0" x1="511.3" y1="95.1" x2="511.3" y2="215.1"/>
+	<line class="st0" x1="511.3" y1="808.9" x2="511.3" y2="928.9"/>
+</g>
+<g id="fills">
+</g>
+</svg>

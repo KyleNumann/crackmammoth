@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 360 360" style="enable-background:new 0 0 360 360;" xml:space="preserve">
+<style type="text/css">
+	.colorOne{fill:#D7BE3C;}
+	.colorTwo{fill:#F4D857;}
+	.colorFour{fill:#FFF4B0;}
+	.outlineOne{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st1{fill:#F9D500;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:none;stroke:#000000;stroke-width:5.625;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st10{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:19.8448,39.6897;}
+	.st11{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st12{fill:#FFF573;}
+	.st13{fill:#BDF4AB;}
+	.st14{fill:#91ED77;}
+	.st15{fill:#75D05C;}
+	.st16{fill:#5AB441;}
+	.st17{fill:#B0DAFF;}
+	.st18{fill:#7BB6F7;}
+	.st19{fill:#5E9BDA;}
+	.st20{fill:#4182BE;}
+	.st21{fill:none;}
+	.st22{fill:#D7BE3C;}
+	.st23{fill:#F4D857;}
+	.st24{fill:#FFF4B0;}
+</style>
+<g id="outlines">
+	<polyline class="outlineOne" points="270,169.5 270,311.9 81.2,311.9 81.2,58.1 270,58.1 270,143.2 	"/>
+	<line class="outlineOne" x1="113.6" y1="117.9" x2="246.4" y2="117.9"/>
+	<line class="outlineOne" x1="113.6" y1="185" x2="229.6" y2="185"/>
+	<polygon class="outlineOne" points="333.3,107 274.2,166 238.2,202 218.4,208.7 225.1,188.9 274.2,139.7 320.2,93.8 	"/>
+	<line class="outlineOne" x1="113.6" y1="218.4" x2="211.3" y2="218.4"/>
+	<line class="outlineOne" x1="113.6" y1="151.3" x2="246.4" y2="151.3"/>
+</g>
+<g id="fills">
+	<polygon class="colorFour" points="273,143.2 273,55.1 78.2,55.1 78.2,314.9 273,314.9 273,169.5 270,169.5 270,143.2 	"/>
+	<rect x="113.6" y="114.9" class="colorTwo" width="132.9" height="6"/>
+	<rect x="113.6" y="182" class="colorTwo" width="116" height="6"/>
+	<rect x="113.6" y="215.4" class="colorTwo" width="97.7" height="6"/>
+	<rect x="113.6" y="148.3" class="colorTwo" width="132.9" height="6"/>
+	<polygon class="colorOne" points="320.2,89.6 222.5,187.2 213.6,213.5 239.9,204.6 337.6,107 	"/>
+</g>
+</svg>

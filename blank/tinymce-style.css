@@ -1,0 +1,67 @@
+.mce-content-body {
+  font-family: 'proxima-nova', sans-serif;
+}
+a.btn, .btn {
+    display: inline-block;
+    padding: 0.5em 2em;
+    color: #fff;
+    background: #5ab441;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+a.btn-outlined, .btn-outlined {
+  background:transparent;
+  box-shadow:inset 0 0 0 2px #5ab441;
+  color:#5ab441;
+}
+h1, h2, h3, h4, h5
+}
+h1 {
+  font-size:2.8em;
+}
+h2 {
+  font-size:2em;
+}
+h3 {
+  font-size:1.6em;
+}
+h4 {
+  font-size:1.3em;
+}
+h5 {
+  font-size:1.1em;
+}
+blockquote {
+  font-size:1.66em;
+  font-weight:400;
+  margin:0.8em 0 1em;
+  line-height:1.3;
+}
+.emphasis {
+  font-size:1.66em;
+  font-weight:400;
+}
+.emphasis-sm {
+  font-size:1.22em;
+  font-weight:400;
+}
+.text-cta {
+  line-height:1.2;
+  text-transform: uppercase;
+  font-weight:bold;
+}
+.text-yellow, a.text-yellow {
+  color: #d7be3c; }
+
+.text-blue, a.text-blue {
+  color: #4182be; }
+
+.text-red, a.text-red {
+  color: #a02832; }
+
+.text-purple, a.text-purple {
+  color: #6e288c; }
+
+.text-green, a.text-green {
+  color: #5ab441; }

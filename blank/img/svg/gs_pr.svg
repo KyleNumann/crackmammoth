@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 360 360" style="enable-background:new 0 0 360 360;" xml:space="preserve">
+<style type="text/css">
+	.colorOne{fill:#D7BE3C;}
+	.colorFour{fill:#FFF4B0;}
+	.outlineOne{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st1{fill:#F9D500;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:none;stroke:#000000;stroke-width:5.625;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#000000;stroke-width:5.625;stroke-linecap:round;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st7{fill:#FFFFFF;stroke:#000000;stroke-width:24;stroke-miterlimit:10;}
+	.st8{fill:#FFFFFF;stroke:#000000;stroke-width:16;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#000000;stroke-width:24;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st10{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:19.8448,39.6897;}
+	.st11{fill:none;stroke:#000000;stroke-width:16;stroke-miterlimit:10;stroke-dasharray:31.2518,41.669;}
+	.st12{fill:#F4D857;}
+	.st13{fill:#FFF573;}
+	.st14{fill:#BDF4AB;}
+	.st15{fill:#91ED77;}
+	.st16{fill:#75D05C;}
+	.st17{fill:#5AB441;}
+	.st18{fill:#B0DAFF;}
+	.st19{fill:#7BB6F7;}
+	.st20{fill:#5E9BDA;}
+	.st21{fill:#4182BE;}
+	.st22{fill:none;}
+	.st23{fill:#D7BE3C;}
+	.st24{fill:#FFF4B0;}
+</style>
+<g id="outlines">
+	<polygon class="outlineOne" points="316.1,96 316.1,215.5 276.5,215.5 276.4,251 227.5,215.5 196.9,215.5 196.9,169.5 91.4,169.5 
+		91.4,96 	"/>
+	<polygon class="outlineOne" points="196.9,169.5 196.9,247.9 121.8,247.9 87.4,272.8 87.3,247.9 38.7,247.9 38.7,169.5 	"/>
+</g>
+<g id="fills">
+	<polygon class="colorFour" points="88.4,93 88.4,172.5 193.9,172.5 193.9,218.5 226.6,218.5 279.4,256.9 279.5,218.5 319.1,218.5 
+		319.1,93 	"/>
+	<polygon class="colorOne" points="35.7,166.5 35.7,250.9 84.3,250.9 84.4,278.7 122.8,250.9 199.9,250.9 199.9,166.5 	"/>
+</g>
+</svg>

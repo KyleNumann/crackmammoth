@@ -1,0 +1,256 @@
+footer {
+  color:#fff;
+  background:rgba(0,0,0,0.84);
+  nav {
+    display:inline-block;
+    vertical-align: top;
+    ul {
+      > li {
+        text-align: left;
+        vertical-align: top;
+        margin-right:2em;
+        > a {
+          padding:0.4em 0;
+          margin-bottom:0.4em;
+          color:white;
+          &:hover {
+            color:$primaryColor;
+          }
+        }
+      }
+      &.sub-menu {
+        > li {
+          display: block;
+          margin-right:0;
+          > a {
+            // color: $bodyColorLight;
+            color:$whiteLight;
+            font-size: 16px;
+            text-transform:none;
+            margin-bottom:0;
+            &:hover {
+              color:$primaryColor;
+            }
+          }
+        }
+        .menu-header a {
+            color:white;
+            text-transform: uppercase;
+            font-size: 1em;
+            margin-top:0.8em;
+            &:hover {
+              color:$primaryColor;
+            }
+        }
+      }
+    }
+  }
+  a.menu-header {
+      display:inline-block;
+      color:white;
+      text-transform: uppercase;
+      font-size: 1em;
+      padding: 0.4em 0;
+      margin-bottom: 0.4em;
+      &:hover {
+        color:$primaryColor;
+      }
+  }
+  .sub-footer {
+    height: 100%;
+    border-top:1px solid $whiteLight;
+    ul {
+      text-align: center;
+      > li {
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+        + li:before {
+          content: " | ";
+        }
+      }
+    }
+  }
+}
+.footer-brand-mark {
+  margin-top:2em;
+}
+.footer-logo-mark {
+  width:100px;
+  height:70px;
+  fill:$whiteLight;
+  stroke:$whiteLight;
+  // margin-top:1em;
+}
+.footer-tagline {
+  font-size:3em;
+  line-height:1;
+  color:$whiteLight;
+  letter-spacing: 0.02em;
+  margin-top:0.2em;
+}
+.footer-connect {
+  display:inline-block;
+  vertical-align: top;
+  text-align:left;
+  a {
+    color:white;
+    display:inline-block;
+    margin-bottom:0.5em;
+    .gs-icon {
+      color:$whiteLight;
+      vertical-align: middle;
+      width:1.4em;
+      height:1.4em;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      color:$primaryColor;
+      .gs-icon {
+        color:$primaryColor;
+      }
+    }
+  }
+}
+footer {
+  .copyright {
+    font-size:0.8em;
+    color:$whiteLight;
+  }
+}
+@media screen and (max-width:1500px){
+  footer {
+    nav {
+      ul {
+        > li {
+          text-align: left;
+          vertical-align: top;
+          margin-right:1.5em;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:1350px){
+  .footer-logo-mark {
+    width:60px;
+    height:40px;
+  }
+  .footer-tagline {
+    font-size:2em;
+  }
+  footer {
+    nav {
+      ul {
+        > li {
+          margin-right:1em;
+        }
+        &.sub-menu {
+          > li {
+            > a {
+              font-size: 13.5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:1199px){
+  .footer-brand-mark {
+    // margin-top:2em;
+    text-align: center;
+  }
+  .footer-logo-mark {
+    display:inline-block;
+    vertical-align: top;
+    margin-right:1em;
+    // width:80px;
+    // height:70px;
+  }
+  .footer-tagline {
+    margin-top:0;
+    display:inline-block;
+    vertical-align: top;
+  }
+  footer {
+    .footer-nav-wrap {
+      text-align:center;
+    }
+    nav {
+      ul {
+        > li {
+          margin-right:2em;
+        }
+        &.sub-menu {
+          > li {
+            > a {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:1100px){
+  footer {
+    nav {
+      ul {
+        > li {
+          a {
+            font-size:16px;
+          }
+
+        }
+        &.sub-menu {
+          > li {
+            > a {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:991px){
+  footer {
+    .copyright {
+      text-align:center;
+    }
+  }
+}
+@media screen and (max-width:767px){
+  footer {
+    .footer-logo-mark {
+      margin-bottom:1em;
+    }
+  }
+}
+@media screen and (max-width:550px){
+  .footer-tagline {
+    font-size:1.2em;
+    display:block;
+  }
+}
+
+.sub-footer {
+  .affiliations {
+    a {
+      display:inline-block;
+      max-width:28%;
+      height:80px;
+      margin-right:4%;
+      vertical-align: middle;
+      opacity:0.6;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity:1;
+      }
+      img {
+        max-height:100%;
+      }
+    }
+  }
+}

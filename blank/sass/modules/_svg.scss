@@ -1,0 +1,304 @@
+
+/* Icons */
+.gs-svg {
+  fill: currentColor;
+  stroke: currentColor;
+  .outlineOne {
+    stroke: currentColor;
+  }
+  #fills {
+    .colorOne, .colorTwo, .colorThree, .colorFour {
+      opacity:0;
+      stroke-width:0;
+    }
+  }
+}
+
+.gs-icon {
+  display:inline-block;
+  width:1.2em;
+  height:1.2em;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* Draw animations */
+
+// .scroll-trigger.active .svg-draw, .scroll-trigger.active.svg-draw {
+//   stroke-dashoffset: 0 !important;
+//   transition: stroke-dashoffset 1.4s ease-in-out;
+// }
+
+.preload .svg-draw {
+  stroke-dashoffset: 9999;
+  stroke-dasharray: 9999;
+  transition:none;
+}
+.svg-draw {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+
+/* Fill On Hover */
+.gs-svg.fill-on-hover,
+.svg-fill-on-hover {
+  #fills {
+    .colorOne {
+      opacity:0;
+      transition:all 0.2s ease;
+    }
+    .colorTwo {
+      opacity:0;
+      transition:all 0.2s ease 0.05s;
+    }
+    .colorThree {
+      opacity:0;
+      transition:all 0.2s ease 0.1s;
+    }
+    .colorFour {
+      opacity:0;
+      transition:all 0.2s ease 0.15s;
+    }
+  }
+  #outlines {
+    .outlineOne {
+      stroke-width:6px;
+      transition:all 0.2s ease;
+    }
+  }
+  &:hover {
+    #fills {
+      .colorOne, .colorTwo, .colorThree, .colorFour {
+        opacity:1;
+      }
+    }
+    #outlines {
+      .outlineOne {
+        stroke-width:0 !important;
+      }
+    }
+  }
+}
+
+
+/* Filled Icons */
+.svg-filled {
+  #fills {
+    .colorOne, .colorTwo, .colorThree, .colorFour {
+      opacity:1;
+    }
+  }
+  #outlines {
+    .outlineOne {
+      stroke-width:0 !important;
+    }
+  }
+}
+
+/* Yellow on Hover */
+.gs-svg.svg-yellow-hover,
+.svg-yellow-hover {
+  .colorOne {
+    transition:all 0.2s ease;
+  }
+  .colorTwo {
+    transition:all 0.2s ease 0.05s;
+  }
+  .colorThree {
+    transition:all 0.2s ease 0.1s;
+  }
+  .colorFour {
+    transition:all 0.2s ease 0.15s;
+  }
+  &:hover {
+    #fills {
+      .colorOne{
+        fill:#D7BE3C !important;
+      }
+      .colorTwo{
+        fill:#F4D857 !important;
+      }
+      .colorThree{
+        fill:#FFF573 !important;
+      }
+      .colorFour{
+        fill:#FFF4B0 !important;
+      }
+    }
+    #outlines {
+      .outlineOne {
+        stroke-width:0 !important;
+      }
+    }
+  }
+}
+
+
+/* Stroke Pulse  */
+.gs-svg.stroke-pulse #outlines .outlineOne {
+  -webkit-animation:strokePulse 2s infinite;
+}
+.gs-svg.stroke-pulse:hover #outlines .outlineOne {
+  /*-webkit-animation:none;*/
+}
+.gs-svg.stroke-pulse #fills .colorOne,
+.gs-svg.stroke-pulse #fills .colorTwo,
+.gs-svg.stroke-pulse #fills .colorThree,
+.gs-svg.stroke-pulse #fills .colorFour
+{
+  opacity:0;
+}
+.gs-svg.fill-on-hover.stroke-pulse:hover #outlines .outlineOne {
+  animation:none;
+}
+
+/* Color Wheel */
+.gs-svg.color-wheel-hover:hover #fills .colorOne {
+  -webkit-animation:colorOneWheel 1s infinite !important;
+}
+.gs-svg.color-wheel-hover:hover #fills .colorTwo {
+  -webkit-animation:colorTwoWheel 1s infinite;
+}
+.gs-svg.color-wheel-hover:hover #fills .colorThree {
+  -webkit-animation:colorThreeWheel 1s infinite;
+}
+.gs-svg.color-wheel-hover:hover #fills .colorFour {
+  -webkit-animation:colorFourWheel 1s infinite;
+}
+
+/* Color Themes */
+.yellow-theme .colorOne{
+  fill:#D7BE3C !important;
+}
+.yellow-theme .colorTwo{
+  fill:#F4D857 !important;
+}
+.yellow-theme .colorThree{
+  fill:#FFF573 !important;
+}
+.yellow-theme .colorFour{
+  fill:#FFF4B0 !important;
+}
+.green-theme .colorOne {
+  fill:#5AB441 !important;
+}
+.green-theme .colorTwo {
+  fill:#75D05C !important;
+}
+.green-theme .colorThree {
+  fill:#91ED77 !important;
+}
+.green-theme .colorFour {
+  fill:#BDF4AB !important;
+}
+.blue-theme .colorOne {
+  fill:#4182BE !important;
+}
+.blue-theme .colorTwo {
+  fill:#5E9BDA !important;
+}
+.blue-theme .colorThree {
+  fill:#7BB6F7 !important;
+}
+.blue-theme .colorFour {
+  fill:#B0DAFF !important;
+}
+.red-theme .colorOne {
+  fill:#a02832 !important;
+}
+.red-theme .colorTwo {
+  fill:#be4448 !important;
+}
+.red-theme .colorThree {
+  fill:#dc6060 !important;
+}
+.red-theme .colorFour {
+  fill:#f4a2a2 !important;
+}
+.purple-theme .colorOne {
+  fill:#6E288C !important;
+}
+.purple-theme .colorTwo {
+  fill:#8942A8 !important;
+}
+.purple-theme .colorThree {
+  fill:#A55BC4 !important;
+}
+.purple-theme .colorFour {
+  fill:#CFA2ED !important;
+}
+
+
+/* Stroke Pulse Animations */
+@-webkit-keyframes strokePulse {
+  0% {
+    stroke-width:6px;
+    stroke:#000;
+  }
+  50% {
+    stroke-width:16px;
+    stroke:#D7BE3C;
+  }
+  100% {
+    stroke-width:6px;
+    stroke:#000;
+  }
+}
+
+/* Color Wheel Animations */
+@-webkit-keyframes colorOneWheel {
+  0% {
+    fill:#D7BE3C;
+  }
+  33% {
+    fill:#5AB441;
+  }
+  66% {
+    fill:#4182BE;
+  }
+  100% {
+    fill:#D7BE3C;
+  }
+}
+@-webkit-keyframes colorTwoWheel {
+  0% {
+    fill:#F4D857;
+  }
+  33% {
+    fill:#75D05C;
+  }
+  66% {
+    fill:#5E9BDA;
+  }
+  100% {
+    fill:#F4D857;
+  }
+}
+@-webkit-keyframes colorThreeWheel {
+  0% {
+    fill:#FFF573;
+  }
+  33% {
+    fill:#91ED77;
+  }
+  66% {
+    fill:#7BB6F7;
+  }
+  100% {
+    fill:#FFF573;
+  }
+}
+@-webkit-keyframes colorFourWheel {
+  0% {
+    fill:#FFF4B0;
+  }
+  33% {
+    fill:#BDF4AB;
+  }
+  66% {
+    fill:#B0DAFF;
+  }
+  100% {
+    fill:#FFF4B0;
+  }
+}
