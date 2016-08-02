@@ -24,7 +24,7 @@
 												<div class="row">
 													<div class="col-sm-12 col-sm-offset-6">
 														<?php if(get_sub_field('title')): ?>
-															<h2 class="h2 page-section__title text-center" id="<?=$id?>"><?php echo get_sub_field('title'); ?></h2>
+															<h2 class="h2 page-section__title text-center mb4" id="<?=$id?>"><?php echo get_sub_field('title'); ?></h2>
 														<?php endif; ?>
 														<?php if(get_sub_field('content')): ?>
 															<div class="wysiwyg">
@@ -59,28 +59,26 @@
 											<div class="row">
 												<div class="col-sm-24">
 													<?php if(get_sub_field('title')): ?>
-														<h2 class="h2 page-section__title text-center" id="<?=$id?>"><?php echo get_sub_field('title'); ?></h2>
+														<h2 class="h2 page-section__title text-center mb4" id="<?=$id?>"><?php echo get_sub_field('title'); ?></h2>
 													<?php endif; ?>
 
-													<div class="row">
+													<div class="row inline-grid">
 														<?php
 															if(get_sub_field('photo_gallery')):
 																$images = get_sub_field('photo_gallery');
 																foreach ($images as $image):
-														?>
-																<!-- using custom BS class, need to work it out -->
-																<div class="<?=$cols?>">
+														?><div class="<?=$cols?>">
 																	<div class="block mb2">
-																		<img class="block" src="<?php echo $image['sizes']['medium']; ?>">
+																		<a class="image-lightbox" href="<?php echo $image['sizes']['large']; ?>">
+																			<img class="block" src="<?php echo $image['sizes']['medium']; ?>">
+																		</a>
 																		<?php if($image['caption']): ?>
 																			<div class="item-copy">
 																				<div class="h5"><?php echo $image['caption']; ?></div>
 																			</div>
 																		<?php endif; ?>
 																	</div>
-																</div>
-
-														<?php endforeach; endif; ?>
+																</div><?php endforeach; endif; ?>
 													</div>
 
 												</div>

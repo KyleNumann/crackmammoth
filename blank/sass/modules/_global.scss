@@ -4,22 +4,22 @@ html, html a, html button, html input, html textarea, html select {
 }
 
 html, body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    background-color: #fff;
-    color: $bodyColor;
+    background-color: black;
+    background:url(img/bg-tile.jpg) repeat center center #1a1b1c;
+    color: #fff;
     font-family: $primaryFontFamily, sans-serif;
     font-size: $baseFontSize;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     line-height:1.4;
 }
 .wrapper {
     // height: 100%;
-  background:white;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+
 }
 
 main {
@@ -34,6 +34,7 @@ main {
   line-height:1.2;
   // text-transform: uppercase;
   font-weight:bold;
+  color:$primaryColor;
 }
 .h1, .h2, .h3, .h4, .h5 {
   @include headers();
@@ -118,93 +119,6 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-
-// /* Typography styles */
-// @mixin headers(){
-//   font-family: $secondaryFontFamily, sans-serif;
-//   line-height:1.2;
-//   text-transform: uppercase;
-//   font-weight:bold;
-// }
-// .h1, .h2, .h3, .h4, .h5 {
-//   @include headers();
-//   margin:0;
-//   // line-height: 1;
-//   .bgColor & {
-//     color:white;
-//   }
-//   &.alt {
-//     font-family:$primaryFontFamily, sans-serif;
-//     text-transform:none;
-//   }
-// }
-// a {
-//   &.h1, &.h2, &.h3, &.h4, &.h5 {
-//     display: block;
-//     text-decoration: none !important;
-//   }
-// }
-// .h1 {
-//   font-size:3.9em;
-// }
-// .h2 {
-//   font-size: 2.8em;
-// }
-// .h3 {
-//   font-size: 2.4em;
-// }
-// .h4 {
-//   font-size: 1.8em;
-// }
-// .h5 {
-//   font-size:1.1em;
-// }
-// h1, h2, h3, h4, h5 {
-//   font-weight: normal;
-// }
-// .wysiwyg {
-//   line-height:1.5;
-//   h1, h2, h3, h4, h5 {
-//     @include headers();
-//     margin:0.8em 0 0.4em;
-//     &:first-child {
-//       margin-top:0;
-//     }
-//   }
-//   h1 {
-//     font-size:3.9em;
-//   }
-//   h2 {
-//     font-size:2.8em;
-//   }
-//   h3 {
-//     font-size:2em;
-//   }
-//   h4 {
-//     font-size:1.3em;
-//   }
-//   h5 {
-//     font-size:1.1em;
-//   }
-//   blockquote {
-//     font-size:1.66em;
-//     font-weight:400;
-//     color:$secondaryColor;
-//     margin:0.8em 0 1em;
-//     line-height:1.3;
-//   }
-//   ul, ol {
-//     padding-left:1em;
-//     margin:0.5em 0 1em;
-//   }
-// }
-// .wysiwyg {
-//   h1, h2, h3, h4, h5 {
-//     &:first-child {
-//       margin-top:0;
-//     }
-//   }
-// }
 @media (max-width:$screen-sm-min){
   // scale down headers at bootstrap sm
   .h1 {
@@ -248,38 +162,7 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-.node-line-header {
-  position:relative;
-  color:$primaryColor;
-  .gs-svg {
-    content: "";
-    position: absolute;
-    // right: 101.5%;
-    right: calc(100% + 0.3em);
-    top: -2px;
-    height: 18px;
-    width: 700px;
-    .nodeLineOutline {
-      stroke:$primaryColor;
-    }
-    // stroke-dashoffset: -600;
-    // stroke-dasharray: 600;
-    transition: stroke-dashoffset 0.7s ease-in-out;
-  }
-  transform:translateX(-50px);
-  // opacity:0;
-  transition:all 0.5s ease;
-  &.scroll-trigger {
-    opacity:0;
-  }
-  &.active {
-    transform:translateX(0);
-    opacity:1;
-    .gs-svg {
-      // stroke-dashoffset: 0;
-    }
-  }
-}
+
 .bg-green, .bg-blue, .bg-gray, .text-white {
   .node-line-header {
     color:white;
@@ -357,18 +240,13 @@ a {
 a.btn,
 .btn {
   display:inline-block;
-  padding:0.5em 2em;
+  padding:0.3em 0.8em;
   color:#fff;
   background:$primaryColor;
   text-decoration: none !important;
   text-transform:uppercase;
   font-size:0.9em;
-  &:after {
-    content:"\00BB";
-    margin-left:0.4em;
-    font-size:1.2em;
-    line-height: 0.8em;
-  }
+  border-radius:0.2em;
   &:hover {
     background:lighten($primaryColor, 10%);
     color:#fff;
@@ -411,25 +289,6 @@ button.btn {
 .btn-wrap .btn {
   margin-right:0.5em;
   margin-bottom:0.5em;
-}
-.text-cta {
-  font-family: $secondaryFontFamily, sans-serif;
-  line-height:1.2;
-  text-transform: uppercase;
-  font-weight:bold;
-  &:after {
-    content: "\00BB";
-    margin-left:0.2em;
-  }
-  &.arrow-up:after {
-    display:inline-block;
-    transform:rotate(-90deg);
-  }
-  &.arrow-down:after {
-    display:inline-block;
-    transform:rotate(90deg);
-    margin-left:0.4em;
-  }
 }
 
 .pull-quote-base {
@@ -476,321 +335,12 @@ main {
 }
  /* Colors & Gradients */
 
- .text-yellow {
-   color:$gs-yellow;
+ .text-white {
+   color:white;
  }
- a.text-yellow {
-   color:$gs-yellow;
-   &:hover {
-     color:lighten($gs-yellow, 10%);
-   }
- }
- .text-blue {
-   color:$gs-blue;
- }
- a.text-blue {
-   color:$gs-blue;
-   &:hover {
-     color:lighten($gs-blue, 10%);
-   }
- }
- .text-red {
-   color:$gs-red;
- }
- a.text-red {
-   color:$gs-red;
-   &:hover {
-     color:lighten($gs-red, 10%);
-   }
- }
- .text-green {
-   color:$gs-green;
- }
- a.text-green {
-   color:$gs-green;
-   &:hover {
-     color:lighten($gs-green, 10%);
-   }
- }
- .text-purple {
-   color:$gs-purple;
- }
- a.text-purple {
-   color:$gs-purple;
-   &:hover {
-     color:lighten($gs-purple, 10%);
-   }
- }
-
-.text-white {
-  color:white;
-  a {
-    color:inherit;
-    &:not([class*="text-"]):not(.btn):hover {
-      // apply green hover to override the white, unless the link has a text-color class, then let that hover color show through
-      color:$primaryColor;
-    }
-  }
-  .btn-outlined, a.btn-outlined {
-    color:inherit;
-  }
-}
-.text-default {
-  // color:inherit;
-  color:$bodyColor;
-  a {
-    color:inherit;
-    &:hover {
-      color:$primaryColor;
-    }
-  }
-}
 
 .lowercase {
   text-transform: none;
-}
-
-.bg-dark {
-  color:white;
-}
-
-.bg-green {
-  // green background with a slight gradient
-  background:$primaryColor;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#55a46d+0,5ab441+100 */
-  background: #55a46d; /* Old browsers */
-  background: -moz-linear-gradient(left,  #55a46d 0%, #5ab441 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #55a46d 0%,#5ab441 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #55a46d 0%,#5ab441 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55a46d', endColorstr='#5ab441',GradientType=1 ); /* IE6-9 */
-
-  color:white;
-  .text-cta {
-    color:$bodyColor;
-    &:hover {
-      color:lighten($bodyColor, 20%);
-    }
-  }
-}
-
-.bg-blue {
-  // blue background with a slight gradient
-  background:#4182be;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4192a6+0,4182be+100 */
-  background: #4192a6; /* Old browsers */
-  background: -moz-linear-gradient(left,  #4192a6 0%, #4182be 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #4192a6 0%,#4182be 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #4192a6 0%,#4182be 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4192a6', endColorstr='#4182be',GradientType=1 ); /* IE6-9 */
-
-  color:white;
-  .text-cta {
-    color:$tertiaryColor;
-    &:hover {
-      color:lighten($tertiaryColor, 20%);
-    }
-  }
-}
-
-.bg-blue-purple {
-  // blue background with a slight gradient
-  background:#4182be;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,4182be+100 */
-  background: #4182be; /* Old browsers */
-  background: -moz-linear-gradient(left,  #4182be 0%, #535ea9 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #4182be 0%,#535ea9 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #4182be 0%,#535ea9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4182be', endColorstr='#535ea9',GradientType=1 ); /* IE6-9 */
-
-  color:white;
-  .text-cta {
-    color:$tertiaryColor;
-    &:hover {
-      color:lighten($tertiaryColor, 20%);
-    }
-  }
-}
-
-.bg-red {
-  // blue background with a slight gradient
-  background:$gs-red;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,4182be+100 */
-  background: $gs-red; /* Old browsers */
-  background: -moz-linear-gradient(left,  $gs-red 0%, #a0285d 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  $gs-red 0%,#a0285d 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  $gs-red 0%,#a0285d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gs-red', endColorstr='#a0285d',GradientType=1 ); /* IE6-9 */
-
-  color:white;
-  .text-cta {
-    color:$tertiaryColor;
-    &:hover {
-      color:lighten($tertiaryColor, 20%);
-    }
-  }
-}
-
-.bg-purple {
-  // blue background with a slight gradient
-  background:$gs-purple;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,4182be+100 */
-  background: $gs-purple; /* Old browsers */
-  background: -moz-linear-gradient(left,  $gs-purple 0%, #83288c 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  $gs-purple 0%,#83288c 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  $gs-purple 0%,#83288c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gs-purple', endColorstr='#83288c',GradientType=1 ); /* IE6-9 */
-
-  color:white;
-  .text-cta {
-    color:$tertiaryColor;
-    &:hover {
-      color:lighten($tertiaryColor, 20%);
-    }
-  }
-}
-
-.bg-gray, .bg-grey {
-  background:$bodyColor;
-  color:white;
-  .text-cta {
-    color:$primaryColor;
-    &:hover {
-      color:lighten($primaryColor, 20%);
-    }
-  }
-}
-
-.bg-fade-blue-green {
-  // gradient fade overlay
-  position:relative;
-  &:after {
-    content:"";
-    @include absoluteFill;
-    opacity:0.2;
-    transition:all 0.3s ease;
-    z-index:2;
-    pointer-events: none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,59b53f+100 */
-    background: #4182be; /* Old browsers */
-    background: -moz-linear-gradient(left,  #4182be 0%, #59b53f 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #4182be 0%,#59b53f 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #4182be 0%,#59b53f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4182be', endColorstr='#59b53f',GradientType=1 ); /* IE6-9 */
-  }
-}
-
-.bg-fade-green-blue {
-  // gradient fade overlay
-  position:relative;
-  &:after {
-    content:"";
-    @include absoluteFill;
-    opacity:0.2;
-    transition:all 0.3s ease;
-    z-index:2;
-    pointer-events: none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#59b53f+0,59b53f+100 */
-    background: #59b53f; /* Old browsers */
-    background: -moz-linear-gradient(left,  #59b53f 0%, #4182be 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #59b53f 0%,#4182be 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #59b53f 0%,#4182be 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59b53f', endColorstr='#4182be',GradientType=1 ); /* IE6-9 */
-  }
-}
-
-.bg-fade-blue-yellow {
-  // gradient fade overlay
-  position:relative;
-  &:after {
-    content:"";
-    @include absoluteFill;
-    opacity:0.2;
-    transition:all 0.3s ease;
-    z-index:2;
-    pointer-events: none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,59b53f+100 */
-    background: #4182be; /* Old browsers */
-    background: -moz-linear-gradient(left,  #4182be 0%, $tertiaryColor 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #4182be 0%,$tertiaryColor 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #4182be 0%,$tertiaryColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4182be', endColorstr='$tertiaryColor',GradientType=1 ); /* IE6-9 */
-  }
-}
-
-.bg-fade-yellow-blue {
-  // gradient fade overlay
-  position:relative;
-  &:after {
-    content:"";
-    @include absoluteFill;
-    opacity:0.2;
-    transition:all 0.3s ease;
-    z-index:2;
-    pointer-events: none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,59b53f+100 */
-    background: $gs-yellow; /* Old browsers */
-    background: -moz-linear-gradient(left,  $gs-yellow 0%, $gs-blue 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  $gs-yellow 0%,$gs-blue 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  $gs-yellow 0%,$gs-blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gs-yellow', endColorstr='$gs-blue',GradientType=1 ); /* IE6-9 */
-  }
-}
-
-.bg-fade-blue-purple {
-  // gradient fade overlay
-  position:relative;
-  &:after {
-    content:"";
-    @include absoluteFill;
-    opacity:0.2;
-    transition:all 0.3s ease;
-    z-index:2;
-    pointer-events: none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,59b53f+100 */
-    background: #4182be; /* Old browsers */
-    background: -moz-linear-gradient(left,  #4182be 0%, $gs-purple 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  #4182be 0%,$gs-purple 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  #4182be 0%,$gs-purple 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4182be', endColorstr='$gs-purple',GradientType=1 ); /* IE6-9 */
-  }
-}
-
-.bg-fade-purple-blue {
-  // gradient fade overlay
-  position:relative;
-  &:after {
-    content:"";
-    @include absoluteFill;
-    opacity:0.2;
-    transition:all 0.3s ease;
-    z-index:2;
-    pointer-events: none;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4182be+0,59b53f+100 */
-    background: $gs-purple; /* Old browsers */
-    background: -moz-linear-gradient(left,  $gs-purple 0%, $gs-blue 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  $gs-purple 0%,$gs-blue 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  $gs-purple 0%,$gs-blue 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gs-purple', endColorstr='$gs-blue',GradientType=1 ); /* IE6-9 */
-  }
-}
-
-.preload [class*="bg-fade-"]:after {
-  opacity:1;
-}
-
-.grid-layout form {
-  label {
-    display:none;
-  }
-  .row {
-    input {
-      margin-bottom:0.4em;
-      width:calc(100% - 0.4em);
-    }
-  }
-  button {
-    width:calc(100% - 0.4em);
-  }
 }
 
 .post-edit-link {
@@ -875,198 +425,6 @@ main {
 }
 
 
-.tilt-hover {
-  transition:all 0.3s ease;
-  transform:scale(1) perspective(50em) rotateX(0deg) translateY(0);
-  display:block;
-  &:hover {
-    position:relative;
-    transform:scale(1) perspective(50em) rotateX(8deg) translateY(-3%);
-    z-index:5;
-
-    // look for gradient overlay classes, and fade them out
-    &[class*="bg-fade-"]:after {
-      opacity:0;
-    }
-    div[class*="bg-fade-"]:after {
-      opacity:0;
-    }
-  }
-}
-.tilt-hover-sm {
-  transition:all 0.3s ease;
-  transform:scale(1) perspective(50em) rotateX(0deg) translateY(0);
-  display:block;
-  &:hover {
-    position:relative;
-    transform:scale(1) perspective(50em) rotateX(5deg) translateY(-2%);
-    z-index:5;
-
-    // look for gradient overlay classes, and fade them out
-    &[class*="bg-fade-"]:after {
-      opacity:0;
-    }
-    div[class*="bg-fade-"]:after {
-      opacity:0;
-    }
-  }
-}
-
-.hover-copy {
-  position:relative;
-  overflow:hidden;
-  .item-copy {
-    background:rgba(255,255,255,0.85);
-    padding:1em;
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:-4em;
-    transition:all 0.3s ease;
-  }
-  &:hover {
-    .item-copy {
-      bottom:0;
-    }
-    &[class*="bg-fade-"]:after {
-      opacity:0;
-    }
-    *[class*="bg-fade-"]:after {
-      opacity:0;
-    }
-  }
-  &:focus {
-    outline:0;
-  }
-}
-
-
-/* start state */
-  .mfp-content {
-    opacity: 0;
-    transition: all 0.2s ease-in-out;
-    transform: scale(0.5) perspective(60em) rotateX(70deg);
-  }
-
-  &.mfp-bg {
-    opacity: 0;
-	  transition: all 0.3s ease-out;
-  }
-
-  /* animate in */
-  &.mfp-ready {
-    .mfp-content {
-      opacity: 1;
-      transform: scale(1) perspective(60em) rotateX(0deg);
-    }
-    &.mfp-bg {
-      opacity: 0.8;
-    }
-  }
-
-  /* animate out */
-  &.mfp-removing {
-
-    .mfp-content {
-      transform: scale(0.5) perspective(60em) rotateX(70deg);
-      opacity: 0;
-    }
-    &.mfp-bg {
-      opacity: 0;
-    }
-
-  }
-
-/* Flip Card Animation */
-.flip-card {
-  perspective: 1500px;
-  position: relative;
-}
-.flip-card:hover {
-  z-index:5;
-  .card {
-    transform: rotatey(-180deg);
-  }
-}
-.flip-card .card {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: 0.8s;
-}
-.flip-card .card .card-face {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden ;
-  z-index: 2;
-}
-.flip-card .card .front {
-  position: absolute;
-  z-index: 1;
-  cursor: pointer;
-}
-.flip-card .card .back {
-  transform: rotatey(-180deg);
-  cursor: pointer;
-}
-
-/* BG Slideshow */
-.bg-slideshow {
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  top:0;
-  .slick-list, .slick-track {
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    top:0;
-    width:auto;
-  }
-  .bg-slide {
-    position:absolute !important;
-    left:0 !important;
-    right:0 !important;
-    bottom:0 !important;
-    top:0 !important;
-  }
-}
-
-/* Fold Up On Scroll */
-.fold-scroll {
-  position:relative;
-  // transition:all 0.3s ease;
-  transform:scale(1) perspective(50em) rotateX(0deg) translateY(0);
-  display:block;
-  // &:hover {
-  //   transform:scale(1) perspective(50em) rotateX(10deg) translateY(0);
-  // }
-}
-
-.share-links {
-  list-style:none;
-  padding-left:0;
-  a {
-    vertical-align: top;
-    text-align:left;
-    display:inline-block;
-    margin-bottom:0.5em;
-    color:$bodyColor;
-    &:hover {
-      color:$primaryColor;
-    }
-    .gs-icon {
-      color:$primaryColor;
-      vertical-align: middle;
-      width:1.4em;
-      height:1.4em;
-      transition: all 0.3s ease;
-    }
-  }
-}
 
 /* Video wrap class */
 .video-wrap {

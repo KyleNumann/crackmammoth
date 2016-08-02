@@ -35,231 +35,30 @@ jQuery(function ($) {
       evt.preventDefault();
   });
 
-  /* Slick Slider --------------*/
-  $('.bg-slideshow').slick({
-    infinite:true,
-    autoplay: true,
-    fade: true,
-    arrows: false,
-    autoplaySpeed: 4000
+
+  /* Lightbox */
+  $('.image-lightbox').magnificPopup({
+  type: 'image'
+  // other options
   });
 
-  $('.home-hero-slides').slick({
-    infinite:true,
-    autoplay: true,
-    arrows: false,
-    pauseOnHover: false,
-    speed: 1500,
-    autoplaySpeed: 8000,
-    useTransform: true,
-    dots: true,
-    cssEase: 'cubic-bezier(.77,.01,.45,1)'
-  });
-
-  /* Sub-menu triggers ----------------*/
-
-
-
-
-  var createTrigger = function ( trigger, responder ) {
-
-    var hover_timeout = 150; // milliseconds
-    var is_hovered = false;
-
-    function hideElement(waitTime)
-    {
-        setTimeout(function()
-        {
-            if (!is_hovered)
-            {
-              $(responder).removeClass('active');
-              $(trigger).removeClass('active');
-            }
-        },waitTime);
-    }
-    function showElement()
-    {
-        setTimeout(function()
-        {
-            if (is_hovered)
-            {
-              $(responder).addClass('active');
-              $(trigger).addClass('active');
-
-            }
-        },500);
-    }
-
-    var trigger_mouseenter = function ( evt ) {
-      // $(responder).addClass('active');
-      // $(trigger).addClass('active');
-      // is_hovered = true;
-      showElement();
-      is_hovered = true;
-    };
-
-    var trigger_mouseleave = function ( evt ) {
-      hideElement(hover_timeout);
-      is_hovered = false;
-    };
-
-    var response_mouseenter = function ( evt ) {
-      is_hovered = true;
-    };
-
-    var response_mouseleave = function ( evt ) {
-      hideElement(hover_timeout);
-      is_hovered = false;
-    };
-
-    $(trigger).click(function( event ){
-      event.preventDefault();
-    });
-    $(trigger).on('mouseenter', trigger_mouseenter);
-    $(trigger).on('mouseleave', trigger_mouseleave);
-    $(responder).on('mouseenter', response_mouseenter);
-    $(responder).on('mouseleave', response_mouseleave);
-  };
-
-  createTrigger('.about-menu-trigger', '.about-sub-nav');
-  createTrigger('.work-menu-trigger', '.work-sub-nav');
-
-
-
-  var scrollTrigger = function() {
-    $('.scroll-trigger').each(function(i, elm) {
-      var screenBottom = $(window).scrollTop() + $(window).height();
-      var buffer = 0;
-      var target = $(elm).offset().top + buffer;
-      var animated = $(elm).hasClass('active');
-
-      if (screenBottom >= target) {
-        if (!animated) {
-          $(elm).addClass('active');
-        }
+  // ------------- Smooth Scrolling
+  $(function() {
+  $('a.smooth-scroll').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
       }
-    });
-  };
-
-  var svgDraw = function() {
-    $('.svg-draw').each(function(i, elm) {
-      var screenBottom = $(window).scrollTop() + $(window).height();
-      var buffer = 0;
-      var target = $(elm).offset().top + buffer;
-      var lineLength = $(elm).attr('stroke-length');
-
-      if (screenBottom >= target) {
-        // this relies on the pre-calculating done in svg.js
-        $(elm).css('stroke-dashoffset', (lineLength * 2));
-      }
-    });
-  };
-  $(window).load(function() {
-    if($(window).width() > 767){
-      svgDraw();
-      scrollTrigger();
     }
   });
-  $(window).on('scroll', function() {
-    if($(window).width() > 767){
-      svgDraw();
-      scrollTrigger();
-    }
-  });
+});
 
 
-  // When the DOM is ready
-  // $(function() {
-  $(window).load(function() {
-
-    // Init ScrollMagic Controller
-    var scrollMagicController = new ScrollMagic.Controller();
-
-    // ------ Page Hero Animations
-    var pageHero = $('#page-hero');
-    var heroHeight = pageHero.outerHeight();
-    $(window).on('resize', function(){
-      var heroHeight = pageHero.outerHeight();
-    });
-
-    // ------- Create Animation for Hero Section parallax
-    var tween = TweenMax.to('#page-hero .hero-bg', 0.5, {
-      y: heroHeight * 0.4,
-      ease: Linear.easeNone
-    });
-
-    // Create the Scene and trigger when visible
-    var scene = new ScrollMagic.Scene({
-      triggerElement: '#page-hero',
-      duration: heroHeight,
-      triggerHook: 0 // trigger using the top of viewport
-    })
-    .setTween(tween)
-    .addTo(scrollMagicController);
-
-    // ------- Activate scroll animations
-    // $(function() {
-    //   $(".scroll-trigger").each(function (index, elem) {
-    //
-    //     new ScrollMagic.Scene({
-    //       duration: 0,
-    //       triggerElement: elem,
-    //       triggerHook: 0.9
-    //     })
-    //     .setClassToggle(elem, "active") // add class toggle
-    //     .addTo(scrollMagicController);
-    //   });
-    // });
-
-    // ------- Activate scroll animations
-    // $(function() {
-    //   $(".svg-draw").each(function (index, elem) {
-    //
-    //     lineLength = $(elem).attr('stroke-length');
-    //
-    //     new ScrollMagic.Scene({
-    //       duration: 0,
-    //       triggerElement: elem,
-    //       triggerHook: 0.9
-    //     })
-    //
-    //     .setClassToggle(elem, "active") // add class toggle
-    //     .css('stroke-dashoffset', lineLength)
-    //     .addTo(scrollMagicController);
-    //   });
-    // });
-
-
-
-    // ------- Billboard parallax
-    $(".billboard").each(function () {
-
-      var elemBg = $(this).find('.billboard-bg');
-
-      new ScrollMagic.Scene({
-        triggerElement: this,
-        duration: "200%",
-        triggerHook: 1 // trigger using the top of viewport
-      })
-      .setTween(elemBg, {y: "40%", ease: Linear.easeNone})
-      .addTo(scrollMagicController);
-    });
-
-    // ------- Case Study
-    $(".case-study-cover").each(function () {
-
-      var screenEl = $(this).find('.case-study-cover-screen.scroll-fade');
-
-      new ScrollMagic.Scene({
-        triggerElement: this,
-        duration: "300",
-        triggerHook: 0.5
-      })
-      .setTween(screenEl, {opacity: "0.2", ease: Linear.easeNone})
-      .addTo(scrollMagicController);
-    });
-
-  });
 
   // -------- Expanding Content
   $('.a_show').click(function( event ){
@@ -270,611 +69,6 @@ jQuery(function ($) {
     event.preventDefault();
     $(this).closest('.expanding-content').removeClass('active');
   });
-
-  // ------- Magnific Popup
-  // $('.modal-image').magnificPopup({
-  //   type:'image',
-  //   removalDelay: 500 //delay removal by X to allow out-animation
-  // });
-
-  $('.image-gallery').each(function() { // the containers for all your galleries
-    $(this).magnificPopup({
-        delegate: 'a', // the selector for gallery item
-        type: 'image',
-        removalDelay: 500, //delay removal by X to allow out-animation
-        mainClass: 'modal-image',
-        gallery: {
-          enabled:true
-        },
-        image: {
-          titleSrc: function(item) {
-            return item.el.attr('data-caption');
-          },
-          tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-        },
-        // trying to show image and caption in the window size... this code is not yet working
-        callbacks: {
-          resize: function() {
-              var img = this.content.find('img');
-              var captionHeight = this.content.find('.mfp-bottom-bar').outerHeight();
-              img.css({
-                'max-height': parseFloat(img.css('max-height')) - (captionHeight + 20)
-                // 'margin-top': '-' + (captionHeight * 0.5) + 'px'
-              });
-          },
-          open: function() {
-            // This code works on resize, but not on initial load.. need to fix this
-            var img = this.content.find('img');
-            var captionHeight = this.content.find('.mfp-bottom-bar').outerHeight();
-            img.css('max-height', parseFloat(img.css('max-height')) - captionHeight);
-          },
-          change: function() {
-            var img = this.content.find('img');
-            var captionHeight = this.content.find('.mfp-bottom-bar').outerHeight();
-            img.css({
-              'max-height': parseFloat(img.css('max-height')) - (captionHeight + 20)
-              // 'margin-top': '-' + (captionHeight * 0.5) + 'px'
-            });
-          }
-        }
-    });
-  });
-
-
-  $('.lightbox-inline').each(function() {
-    var targetElement = $(this).attr('href');
-    $(this).magnificPopup({
-      type: 'inline',
-      removalDelay: 500, //delay removal by X to allow out-animation
-      callbacks: {
-        beforeOpen: function() {
-
-          // as we open the lightbox, initialize this particular slider
-          $(targetElement).find('.lightbox-slideshow').slick({
-            infinite: true,
-            dots: true,
-            arrows: false,
-            lazyLoading: 'ondemand',
-            customPaging : function(slider, i) {
-                var thumb = $(slider.$slides[i]).find('img').data('thumb');
-                return '<a><img src="'+thumb+'"></a>';
-            }
-          });
-          $(window).trigger('resize'); // needed to calculate slide dimensions
-
-        },
-        afterClose: function() {
-
-          // kill the slider
-          $(targetElement).find('.lightbox-slideshow').slick('unslick');
-
-        }
-      }
-    });
-  });
-
-  // $(document).ready(function(){
-  //   $('.lightbox-slideshow').each(function(){
-  //     $(this).slick({
-  //       infinite: true
-  //     });
-  //   });
-  // });
-
-
-
-  /*
-    GS Infinite Scroll
-
-    Click-activated infinite scroll based on WP pagination
-  */
-
-  // Define Vars
-
-  var loadButton = '.main-blog-pagination-next a'; // Button to load more posts
-
-  var blogElem = '.blog-excerpt-wrap'; // Individual blog item selector
-
-  var loadLocation = '.main-blog-list'; // Where to put the blog items
-
-  var loadingContent = '<div class="h3 text-center clr-floats">Loading</div>'; // Content to show while loading
-
-  var noMorePosts = '<div class="h5 text-center vpadding-sm clr-floats">No more posts to display</div>'; // What to show when we run out of posts
-
-  // and now... We start the magic
-  var current_page = 1;
-  $(loadButton).on('click', function ( evt ) {
-    evt.preventDefault();
-    evt.stopPropagation();
-
-    // hide the load more button and append the loading indicator
-    $(loadButton).hide();
-    $(loadLocation).append('<div class="loading-indicator">'+ loadingContent +'</div>');
-
-    // paginate
-    current_page++;
-
-    // run the ajax
-    $.ajax({
-      url: '/blog/page/' + current_page,
-      success: function ( result ) {
-        var items = $(result).find(blogElem);
-        $(items).hide().appendTo(loadLocation).fadeIn(600);
-        $('.loading-indicator').remove();
-
-        // if we are great success, then we need to know wether to show the 'load more'
-        // button or the 'no more posts' message, so we do one more ajax call to see.
-        $.ajax({
-          url: '/blog/page/' + (current_page + 1),
-          success: function ( result ) {
-
-            var items = $(result).find(blogElem);
-            if ( items.length ) {
-              // if we do have more content, show the load button
-              // (I am using a notrans class to suppress conflicting css transition during fadein)
-              $(loadButton).addClass('notrans').fadeIn(600, function(){
-                $(loadButton).removeClass('notrans');
-              });
-            }
-
-          },
-          error: function(){
-            // if we are outta the goods, show the 'no more posts' message
-            $(loadLocation).append(noMorePosts);
-          }
-        });
-
-      }
-    });
-  });
-
-
-  /* Handling of direct download buttons */
-  if($('.direct-download-btn').length){
-    $('.direct-download-btn').each(function(){
-      var thisBtn = $(this);
-
-      $(thisBtn).on('click', function(e){
-        e.preventDefault();
-        // check for download hidden field
-        var hasDownload = $(thisBtn).attr('href');
-        if(typeof hasDownload !== typeof undefined && hasDownload !== false){
-          // hasDownload = $(thisBtn).attr('href');
-          console.log('should donload');
-          window.open(funcData.theme_url + '/inc/download.php?d=' + hasDownload);
-        }
-      });
-    });
-  }
-
-  /* General handling script for AJAX forms */
-  if($('.ajax-form').length) {
-
-    $('.ajax-form').each(function(index){
-
-      var form = this;
-      var thisForm = $(this);
-      var thisFormBtn = $(this).find(':submit');
-      var thisFormWrap = $(this).closest('.ajax-form__wrap');
-
-      $(thisForm).validate({
-        rules: {
-          contactEmail: {
-            required: true,
-            email: true
-          }
-        }
-      });
-
-      $(thisFormBtn).on('click', function(e){
-
-        // if(ajaxFormData.doc_url !== null){
-        //   // check if this works
-        //   console.log('list id' + ajaxFormData.doc_url);
-        // }
-
-        if($(thisForm).valid()) {
-          e.preventDefault();
-
-          $(thisFormWrap).addClass('submitted processing');
-
-
-          // Passing 'form' as vanilla js object so we can get all the fields, and not have to grab them each one by name
-          var formdata = new FormData(form);
-
-          // var formdata = new FormData();
-          // if($(thisForm).find('.form-interests').length){
-          //
-          //   // get interests and make array
-          //   var interestVals = [];
-          //
-          //   $(thisForm).find('.form-interests').each(function(){
-          //     interestVals.push($(this).val());
-          //   });
-          //
-          //   formdata.append('interests', interestVals);
-          // }
-          // formdata.append('mce-FNAME', $(thisForm).find('#mce-FNAME').val());
-          // formdata.append('mce-LNAME', $(thisForm).find('#mce-LNAME').val());
-          // formdata.append('mce-EMAIL', $(thisForm).find('#mce-EMAIL').val());
-          // if($(thisForm).find('#mce-COMPANY').length){
-          //   formdata.append('mce-COMPANY', $(thisForm).find('#mce-COMPANY').val());
-          // }
-
-          // check for download hidden field
-          var hasDownload = false;
-          if($(thisForm).find('#download-item').length){
-            hasDownload = $(thisForm).find('#download-item').val();
-          }
-          if(hasDownload){
-            // moved inside the click to start immediately, using file id instead of url for super-secrecy
-            window.open(funcData.theme_url + '/inc/download.php?id=' + hasDownload);
-
-          }
-
-          $.ajax({
-            url: funcData.theme_url + '/inc/mailchimp-api-v02.php',
-            type: 'POST',
-            dataType: 'json',
-            processData: false,
-            contentType: false,
-            data: formdata,
-            success: function(response){
-              // console.log('success, you are not crazy');
-              console.log(response);
-              if(response.httpcode != 200){
-                // 200 is success, anything else is an error
-                $(thisFormWrap).addClass('submit-error');
-              } else {
-                // must be successfull
-                $(thisFormWrap).addClass('submit-success');
-
-                // if(hasDownload){ - moved to click event to avoid popup blockers
-                //
-                //   setTimeout(function(){
-                //     var x = window.open('http://www.goldenspiralmarketing.com/docs/download.php?d=' + hasDownload);
-                //   }, 3000);
-                //   // if ( x === undefined ) {
-                //   //   alert('Please disable Pop-up Blocking in your browser.');
-                //   //   $('.cta.download').click();
-                //   // }
-                //
-                // }
-
-              }
-            },
-            error: function(response){
-              // console.log('error');
-              // console.log(response);
-              $(thisFormWrap).addClass('submit-error');
-            },
-            complete: function(response){
-              // console.log('complete');
-              // console.log(response);
-              $(thisForm).find('input[type="text"], input[type="email"]').val('');
-              $(thisFormWrap).removeClass('processing').addClass('submit-complete');
-            }
-          });
-        }
-      });
-
-
-      var thisFormDownloadBtn = thisFormWrap.find('.form-download-fallback');
-
-      // manual download button, if user has popups blocked or if auto download fails
-      $(thisFormDownloadBtn).on('click', function(e){
-        e.preventDefault();
-        // check for download hidden field
-        var hasDownload = false;
-        if($(thisForm).find('#download-item').length){
-          hasDownload = $(thisForm).find('#download-item').val();
-          var x = window.open(funcData.site_url + '/inc/download.php?d=' + hasDownload);
-        }
-      });
-
-    });
-
-  }
-
-
-  /* Animated Form ---------------------*/
-  if($('.animated-form').length) {
-    $(document).ready(function() {
-      setTimeout(function(){
-        $(".animated-form .fieldset:first-child").addClass("focus");
-        $(".animated-form .fieldset:first-child input").focus();
-      }, 1000);
-    });
-    $(".animated-form input, .animated-form textarea").focus(function() {
-      $(this).parent('.fieldset').addClass("focus");
-    });
-    $(".animated-form input, .animated-form textarea").blur(function() {
-      $(this).parent('.fieldset').removeClass("focus");
-    });
-  }
-
-
-  /* Case Study Code imported from live site --------------------*/
-
-
-  // requestAnimationFrame for IE9
-	(function() {
-			var lastTime = 0;
-			var vendors = ['webkit', 'moz'];
-			for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-					window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-					window.cancelAnimationFrame =
-						window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
-			}
-
-			if (!window.requestAnimationFrame)
-					window.requestAnimationFrame = function(callback, element) {
-							var currTime = new Date().getTime();
-							var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-							var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-								timeToCall);
-							lastTime = currTime + timeToCall;
-							return id;
-					};
-
-			if (!window.cancelAnimationFrame)
-					window.cancelAnimationFrame = function(id) {
-							clearTimeout(id);
-					};
-	}());
-
-  function checkSectionSize() {
-				var sectionHeight = $('.case-study-section.active').outerHeight();
-				$('.case-study-sections').css('min-height', sectionHeight);
-			}
-
-  // Need to audit and verify the working of this case study code
-  $(document).ready(function() {
-  				$('.case-study-gallery-focus').slick({
-  					variableWidth: true,
-  					slidesToShow: 1,
-  					slidesToScroll: 1,
-  					arrows: false,
-  					// fade: false,
-  					dots: true,
-  					asNavFor: '.case-study-gallery-monitor-slider .case-study-gallery',
-  					centerMode: true,
-  					centerPadding: 0,
-  					touchThreshold: 12
-  				});
-
-  				$('.case-study-gallery-monitor-slider .case-study-gallery').slick({
-  					variableWidth: true,
-  					slidesToShow: 1,
-  					slidesToScroll: 1,
-  					asNavFor: '.case-study-gallery-focus',
-  					dots: false,
-  					arrows: false,
-  					centerMode: true,
-  					focusOnSelect: true,
-  					centerPadding: 0,
-  					touchThreshold: 12
-  				});
-
-  				$('.case-study-gallery-container:not(.case-study-gallery-monitor-slider) .case-study-gallery').slick({
-  					variableWidth: true,
-  					slidesToShow: 1,
-  					slidesToScroll: 1,
-  					dots: true,
-  					arrows: false,
-  					centerMode: true,
-  					focusOnSelect: true,
-  					centerPadding: 0,
-  					swipeToSlide: true,
-  					touchThreshold: 12
-  				});
-
-
-          function checkSectionSize() {
-    				var sectionHeight = $('.case-study-section.active').outerHeight();
-    				$('.case-study-sections').css('min-height', sectionHeight);
-    			}
-
-  				$('.switcher-item').click(function(e) {
-  					e.preventDefault();
-  					var bg = $('.switcher-bg');
-  					var left;
-
-  					if (!$(this).hasClass('active')) {
-  						if ($('.switcher-item-text').hasClass('active')) {
-  							// left = $(this).closest('.switcher-item-visual').position().left - 3;
-  							// bg.css('left', left);
-  							// bg.css('left', '49%');
-  							console.log('text has active');
-  							bg.css('left', '3px');
-  							$('.switcher-item-visual').addClass('active');
-  							$('.switcher-item-text').removeClass('active');
-  							$('.case-study-section.visual').addClass('active');
-  							$('.case-study-section.text').removeClass('active');
-
-  							$('.case-study-gallery-focus').slick('setPosition');
-  							$('.case-study-gallery').slick('setPosition');
-  						} else {
-  							// bg.css('left', '3px');
-  							bg.css('left', '49%');
-  							$('.switcher-item-text').addClass('active');
-  							$('.switcher-item-visual').removeClass('active');
-  							$('.case-study-section.text').addClass('active');
-  							$('.case-study-section.visual').removeClass('active');
-  							$('.case-study-banner').removeClass('active');
-  							if ($(this).parents('.case-study-banner').length) {
-  								$('html, body').animate({
-  									scrollTop: 0
-  								}, 0);
-  							}
-
-  						}
-  						checkSectionSize();
-  						$(".case-study-gallery").slick('slickGoTo','0', false);
-  					}
-  				});
-
-  				$('.btn-case-study-more').click(function(e) {
-  					e.preventDefault();
-  					$('html, body').animate({
-  						scrollTop: 0
-  					}, 0);
-  					if ($(this).hasClass('see')) {
-  						$('.switcher-item-visual').click();
-  					} else {
-  						$('.switcher-item-text').click();
-  					}
-  					$(".case-study-gallery").slick('slickGoTo','0', false);
-  				});
-
-
-
-
-          // Fixed header
-				var scrollTop;
-				// var activeSection;
-				var banner = $('.case-study-banner');
-				var activeSection = null;
-				var offset = 250;
-
-				$.fn.isOnScreen = function(){
-					var win = $(window);
-
-					var viewport = {
-						top : win.scrollTop(),
-						left : win.scrollLeft()
-					};
-					viewport.right = viewport.left + win.width();
-					viewport.bottom = viewport.top + win.height();
-
-					var bounds = this.offset();
-					bounds.right = bounds.left + this.outerWidth();
-					bounds.bottom = bounds.top + this.outerHeight();
-
-					return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-				};
-
-				function checkSection() {
-					if ($('.case-study-section.visual').hasClass('active')) {
-						$('div[data-banner]').each(function() {
-							var section = $(this).data('banner');
-
-							if (!section || section === '') {
-								return;
-							}
-
-							var sectionScrollTop = ( $(this).offset().top - scrollTop ) - offset;
-
-							if (sectionScrollTop <= 0 && $(this).isOnScreen()) {
-								activeSection = section;
-								if (!banner.hasClass('active')) {
-									banner.addClass('active');
-								}
-								//console.log('section', activeSection);
-								if ($('.banner-item.' + activeSection + '.active').length === 0) {
-									$('.banner-item').removeClass('active');
-									$('.banner-item#' + activeSection).addClass('active');
-								}
-							} else {
-								if (activeSection && activeSection === section) {
-
-									banner.removeClass('active');
-									$('.banner-item').removeClass('active');
-									activeSection = null;
-								}
-							}
-						});
-					}
-				}
-
-				$(window).on('scroll', function() {
-					scrollTop = $(window).scrollTop();
-					window.requestAnimationFrame(checkSection);
-				});
-
-				$(window).on('resize', function() {
-					window.requestAnimationFrame(checkSectionSize);
-				});
-
-  });
-
-  $(window).load(function() {
-    checkSectionSize();
-  });
-
-  /* End Case Study Code imported from live site --------------------*/
-
-
-
-/* Career Form imported from live site -----------*/
-if ( $('#career-contact').length ) {
-	$('#careerPhone').mask('(999) 999-9999');
-
-    $('#career-submit').on('click', function(e){
-      if($('#career-contact').valid()) {
-        e.preventDefault();
-
-        var formdata = new FormData();
-				formdata.append('careerListing', $('#careerListing').val());
-				formdata.append('careerCategory', $('#careerCategory').val());
-                formdata.append('careerFirstName', $('#careerFirstName').val());
-				formdata.append('careerLastName', $('#careerLastName').val());
-				formdata.append('careerEmail', $('#careerEmail').val());
-				formdata.append('careerPhone', $('#careerPhone').val());
-				formdata.append('careerPortfolio', $('#careerPortfolio').val());
-				formdata.append('careerComment', $('#careerComment').val());
-				if($('#careerResume').length && $('#careerResume')[0].files.length) {
-					var resume = $('#careerResume')[0].files[0];
-					formdata.append('careerResume', resume, resume.name);
-				}
-
-				$('#career-submit').addClass('disabled');
-				$('#career-submit').text('sending...');
-				$('#career-submit').prop('disabled', true);
-
-        $.ajax({
-            url: funcData.theme_url + '/inc/career-form-apis.php',
-            type: 'POST',
-            dataType: 'json',
-            processData: false,
-            contentType: false,
-            data: formdata
-        })
-        .done(function(response){
-          if(response.status == 'sent') {
-						$('#careerFirstName').val('');
-						$('#careerLastName').val('');
-						$('#careerEmail').val('');
-						$('#careerPhone').val('');
-						$('#careerPortfolio').val('');
-						$('#careerComment').val('');
-						$('#careerResume').val('');
-
-						window.location = '/thanks-career';
-          }
-        });
-      }
-    });
-
-
-    $('#career-contact').validate({
-        rules: {
-            careerEmail: {
-                required: true,
-                email: true
-            }
-        },
-        messages: {
-			careerFirstName: 'required',
-			careerLastName: 'required',
-            careerEmail: {
-                required: 'required',
-                email: 'wrong format'
-            },
-            careerComment: 'required'
-        }
-    });
-}
 
 /* Sticky Elements */
 $(window).load(function() {
@@ -893,6 +87,8 @@ $(window).load(function() {
 });
 
 
+
+$(".wysiwyg").fitVids();
 
 
   /* Mouse Follow script from http://stackoverflow.com/questions/3385936/jquery-follow-the-cursor-with-a-div */
@@ -925,3 +121,97 @@ $(window).load(function() {
 
 
 });
+
+
+
+
+
+
+/*jshint browser:true */
+
+/*!
+* FitVids 1.1
+*
+* Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+* Credit to Thierry Koblentz - http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/
+* Released under the WTFPL license - http://sam.zoy.org/wtfpl/
+*
+*/
+
+;(function( $ ){
+
+  'use strict';
+
+  $.fn.fitVids = function( options ) {
+    var settings = {
+      customSelector: null,
+      ignore: null
+    };
+
+    if(!document.getElementById('fit-vids-style')) {
+      // appendStyles: https://github.com/toddmotto/fluidvids/blob/master/dist/fluidvids.js
+      var head = document.head || document.getElementsByTagName('head')[0];
+      var css = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
+      var div = document.createElement("div");
+      div.innerHTML = '<p>x</p><style id="fit-vids-style">' + css + '</style>';
+      head.appendChild(div.childNodes[1]);
+    }
+
+    if ( options ) {
+      $.extend( settings, options );
+    }
+
+    return this.each(function(){
+      var selectors = [
+        'iframe[src*="player.vimeo.com"]',
+        'iframe[src*="youtube.com"]',
+        'iframe[src*="youtube-nocookie.com"]',
+        'iframe[src*="kickstarter.com"][src*="video.html"]',
+        'object',
+        'embed'
+      ];
+
+      if (settings.customSelector) {
+        selectors.push(settings.customSelector);
+      }
+
+      var ignoreList = '.fitvidsignore';
+
+      if(settings.ignore) {
+        ignoreList = ignoreList + ', ' + settings.ignore;
+      }
+
+      var $allVideos = $(this).find(selectors.join(','));
+      $allVideos = $allVideos.not('object object'); // SwfObj conflict patch
+      $allVideos = $allVideos.not(ignoreList); // Disable FitVids on this video.
+
+      $allVideos.each(function(){
+        var $this = $(this);
+        if($this.parents(ignoreList).length > 0) {
+          return; // Disable FitVids on this video.
+        }
+        if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
+        if ((!$this.css('height') && !$this.css('width')) && (isNaN($this.attr('height')) || isNaN($this.attr('width'))))
+        {
+          $this.attr('height', 9);
+          $this.attr('width', 16);
+        }
+        var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
+            width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
+            aspectRatio = height / width;
+        if(!$this.attr('name')){
+          var videoName = 'fitvid' + $.fn.fitVids._count;
+          $this.attr('name', videoName);
+          $.fn.fitVids._count++;
+        }
+        $this.wrap('<div class="fluid-width-video-wrapper"></div>').parent('.fluid-width-video-wrapper').css('padding-top', (aspectRatio * 100)+'%');
+        $this.removeAttr('height').removeAttr('width');
+      });
+    });
+  };
+
+  // Internal counter for unique video names.
+  $.fn.fitVids._count = 0;
+
+// Works with either jQuery or Zepto
+})( window.jQuery || window.Zepto );

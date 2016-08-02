@@ -39,7 +39,7 @@ var plumberErrorHandler = {
 
 gulp.task('php', function () {
 
-  credentials.remotePath = rootPath+'/templates';
+  credentials.remotePath = rootPath+'/templates'; 
   gulp.src(themeName+'/templates/*.php')
     .pipe(cache('php'))
     .pipe(plumber(plumberErrorHandler))
