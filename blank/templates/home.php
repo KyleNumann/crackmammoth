@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 
-			<div class="vpadding-md">
+			<div class="">
 				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 					<?php
@@ -13,7 +13,9 @@
 						if( have_rows('page_sections') ):
 							while ( have_rows('page_sections') ) : the_row();
 								$id = '';
-								if(get_sub_field('title')){
+								if(get_sub_field('nav_link_text')){
+									$id = strtolower(str_replace(' ', '', get_sub_field('nav_link_text')));
+								} else {
 									$id = strtolower(str_replace(' ', '', get_sub_field('title')));
 								}
 
@@ -24,7 +26,8 @@
 												<div class="row">
 													<div class="col-sm-12 col-sm-offset-6">
 														<?php if(get_sub_field('title')): ?>
-															<h2 class="h2 page-section__title text-center mb4" id="<?=$id?>"><?php echo get_sub_field('title'); ?></h2>
+															<a class="page-anchor" name="<?=$id?>"></a>
+															<h2 class="h2 page-section__title text-center mb4"><?php echo get_sub_field('title'); ?></h2>
 														<?php endif; ?>
 														<?php if(get_sub_field('content')): ?>
 															<div class="wysiwyg">

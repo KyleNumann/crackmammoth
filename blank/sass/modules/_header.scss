@@ -7,6 +7,12 @@ header {
     padding:0;
     margin-right:1em;
   }
+  .audio-player {
+    float:right;
+    clear:both;
+    margin:0.6em 0 0.2em 0.2em;
+    width:14em;
+  }
 }
 .site-header {
   position:fixed;
@@ -14,33 +20,27 @@ header {
   left:0;
   width:100%;
   background:#000;
+  padding:0.5em;
 }
 .site-title {
   display:inline-block;
-  margin:0.5em 0;
+  margin:0;
+  line-height: 1;
 }
 .header-logo {
   display:inline-block;
   width:18em;
   margin:0.5em 0;
 }
-.site-header {
-  #main-nav {
-    opacity:0.8;
-    transition:all 0.3s ease;
-  }
-  &:hover {
-    #main-nav {
-      opacity:1;
-    }
-  }
-}
+
 #main-nav {
   display:inline-block;
-  margin:0.8em 0;
   a {
     display:inline-block;
     margin:0 0.2em;
+    &:hover {
+      opacity:0.8;
+    }
   }
   .btn {
     padding-left:1em;
@@ -52,9 +52,27 @@ header {
     bottom:100%;
   }
 }
+.header-featured-image-wrap {
+  overflow:hidden;
+}
 .header-featured-image {
-  height:0;
-  padding-top:60%;
+  height:500px;
+  transition:opacity 0.3s ease;
+  opacity:1;
+}
+.preload {
+  .header-featured-image {
+    opacity:0;
+  }
+}
+.loading-animation {
+  opacity:0;
+  transition:opacity 0.3s ease 0.2s;
+}
+.preload {
+  .loading-animation {
+    opacity:1;
+  }
 }
 // nav {
 //   ul {

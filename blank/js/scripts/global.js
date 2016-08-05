@@ -13,6 +13,22 @@ jQuery(function ($) {
     $('html').removeClass('preload');
   });
 
+	// global vars to be used later
+	var scrollTop = $(window).scrollTop();
+	var screenHeight = $(window).height();
+	var screenWidth = $(window).width();
+
+	$(window).scroll(function(){
+		scrollTop = $(window).scrollTop();
+	});
+	$(window).resize(function() {
+		screenWidth = $(window).width();
+		screenHeight = $(window).height();
+
+		// run any resize-dependant functions
+		headerFeaturedImage();
+	});
+
   var slideout = new Slideout({
       'panel': document.getElementById('wrapper'),
       'menu': document.getElementById('mobile-menu'),
@@ -35,8 +51,20 @@ jQuery(function ($) {
       evt.preventDefault();
   });
 
+	function headerFeaturedImage() {
+		if($('.header-featured-image').length){
+			var hero = $('.header-featured-image');
+			hero.css('height', screenHeight);
+		}
+	}
+	headerFeaturedImage();
 
-  /* Lightbox */
+  // init scrollr
+  var s = skrollr.init({
+    smoothScrolling: false
+  });
+
+  // Lightbox
   $('.image-lightbox').magnificPopup({
   type: 'image'
   // other options

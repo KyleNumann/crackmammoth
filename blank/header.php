@@ -14,6 +14,10 @@
 </head>
 	<body <?php body_class(); ?>>
 
+		<div class="loading-animation">
+			<?php include('loading-animation.php'); ?>
+		</div>
+
 		<nav id="mobile-menu" role="navigation" class="visible-xs">
 			<?php/*
 			wp_nav_menu(
@@ -41,42 +45,78 @@
 		<!-- wrapper -->
 		<div id="wrapper" class="wrapper">
 
+			<?php
+			 	$headerbg = 'style="background-color:transparent;"';
+				if(get_field('header_bg_color', 'option')){
+					$headerbg = 'style="background-color:'. get_field('header_bg_color', 'option') .';"';
+				}
+				$headertext = 'style="color:transparent;"';
+				if(get_field('header_text_color', 'option')){
+					$headertext = 'style="color:'. get_field('header_text_color', 'option') .';"';
+				}
+				$player = '';
+				if(get_field('audio_player', 'option')){
+					$player = '<div class="audio-player">';
+					$player .= get_field('audio_player', 'option');
+					$player .= '</div>';
+				}
+			?>
+
 			<!-- header -->
-			<header class="site-header clear" role="banner">
-				<div class="container">
+			<header class="site-header clear" role="banner" <?=$headerbg?>>
+				<div class="container-fluid">
 					<div class="row">
-						<div class="col-md-18 col-md-offset-3 col-lg-16 col-lg-offset-4">
+						<div class="col-md-24">
 							<?php
 								if(get_field('logo_type', 'option') == 'image' && get_field('header_logo', 'option')):
 									$logo = get_field('header_logo', 'option')[sizes][medium];
 							?>
-								<img class="header-logo" src="<?=$logo?>">
+								<a href="<?php echo bloginfo('site_url'); ?>">
+									<img class="header-logo" src="<?=$logo?>">
+								</a>
 							<?php else: ?>
-								<h1 class="h5 site-title"><?php bloginfo('name'); ?></h1>
+								<a href="<?php echo bloginfo('site_url'); ?>" <?=$headertext?>>
+									<h1 class="h4 site-title" <?=$headertext?>><?php bloginfo('name'); ?></h1>
+								</a>
 							<?php endif; ?>
 							<!-- nav -->
-							<nav id="main-nav" role="navigation" class="force-right-xs">
 
+							<nav id="main-nav" role="navigation" class="force-right-xs">
 									<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 										<?php
 											// check if the flexible content field has rows of data
 											if( have_rows('page_sections') ):
 												while ( have_rows('page_sections') ) : the_row();
-													$id = '';
-													if(get_sub_field('title')){
-														$id = strtolower(str_replace(' ', '', get_sub_field('title')));
-													} ?>
+												if(get_sub_field('include_in_nav')):
 
-													<a class="btn h5 smooth-scroll" href="#<?=$id?>"><?php echo get_sub_field('title'); ?></a>
+													$id = '';
+													$text = '';
+													if(get_sub_field('nav_link_text')){
+														$text = get_sub_field('nav_link_text');
+														$id = strtolower(str_replace(' ', '', get_sub_field('nav_link_text')));
+													} else {
+														$text = get_sub_field('title');
+														$id = strtolower(str_replace(' ', '', $text));
+													}
+													?>
+
+													<a class="h5 smooth-scroll" href="#<?=$id?>" <?=$headertext?>><?=$text?></a>
 
 										<?php
+													endif;
 												endwhile;
 											endif;
 										?>
+										<a class="h5" href="https://www.facebook.com/crackmammoth" target="_blank"><span class="fa fa-facebook"></span></a>
+										<a class="h5" href="https://soundcloud.com/crack-mammoth" target="_blank"><span class="fa fa-soundcloud"></span></a>
 									<?php endwhile; endif; ?>
 
 							</nav>
+
+							<!-- embed player if exists -->
+							<?=$player?>
+
 							<!-- /nav -->
 						</div>
 					</div>
@@ -92,8 +132,8 @@
 
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col-sm-24">
-									<div class="header-featured-image" style="<?=$bg?>">
+								<div class="col-sm-24 header-featured-image-wrap">
+									<div class="header-featured-image" style="<?=$bg?>" data-top="transform:translateY(0px);" data-top-bottom="transform:translateY(250px);">
 								</div>
 							</div>
 						</div>
