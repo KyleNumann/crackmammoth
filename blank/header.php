@@ -133,7 +133,25 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-sm-24 header-featured-image-wrap">
-									<div class="header-featured-image" style="<?=$bg?>" data-top="transform:translateY(0px);" data-top-bottom="transform:translateY(250px);">
+									<div class="header-featured-image">
+										<div class="absolute-fill" style="<?=$bg?>" data-top="transform:translateY(0px);" data-top-bottom="transform:translateY(250px);"></div>
+										<?php
+											if(get_field('header_text')):
+												$layout = '';
+												if(get_field('text_layout')){
+													$layout = get_field('text_layout');
+												}
+										?>
+										<div class="header-text__padding" data-top="transform:translateY(0px);" data-top-bottom="transform:translateY(150px);">
+
+												<div class="header-text wysiwyg sm-ab50-<?=$layout?>">
+													<?php echo get_field('header_text'); ?>
+												</div>
+
+										</div>
+									<?php endif; ?>
+
+									</div>
 								</div>
 							</div>
 						</div>

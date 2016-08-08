@@ -32,7 +32,13 @@ header {
   width:18em;
   margin:0.5em 0;
 }
-
+.header-text__padding {
+  position:absolute;
+  left:4em;
+  right:4em;
+  bottom:4em;
+  top:4em;
+}
 #main-nav {
   display:inline-block;
   a {

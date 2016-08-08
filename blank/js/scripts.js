@@ -9,6 +9,11 @@ jQuery(function ($) {
   if ((is_chrome)&&(is_safari)) {is_safari=false;}
   if ((is_chrome)&&(is_opera)) {is_chrome=false;}
 
+  var is_mobile = false;
+  if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+    is_mobile = true;
+	}
+
   $(window).load(function() {
     $('html').removeClass('preload');
   });
@@ -60,9 +65,12 @@ jQuery(function ($) {
 	headerFeaturedImage();
 
   // init scrollr
-  var s = skrollr.init({
-    smoothScrolling: false
-  });
+  if(!is_mobile){
+    var s = skrollr.init({
+      smoothScrolling: false
+    });
+    
+  }
 
   // Lightbox
   $('.image-lightbox').magnificPopup({
